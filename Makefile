@@ -32,7 +32,7 @@ iso: check_build_config clean prepare
 	cd $(build_dir)
 	lb build 2>&1 | tee build.log
 	cd ..
-	@scripts/copy-image
+	@scripts/copy-image || $(iso failed)
 
 .PHONY: prepare-package-env
 .ONESHELL:
