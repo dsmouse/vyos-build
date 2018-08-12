@@ -4,6 +4,7 @@ BUILD_DIR=$(scripts/query-json build/build-config.json build_dir)
 BUILD_ARCH=$(scripts/query-json build/build-config.json architecture)
 VERSION=$(cat $BUILD_DIR/version)
 
+# REJECT THIS PULL - I'M TESTING AND THE TEST GOT FREE
 ln -nsf $BUILD_DIR/live-image-$BUILD_ARCH.hybrid.iso $BUILD_DIR/vyos-$VERSION-$BUILD_ARCH.iso 
 [ -f $BUILD_DIR/vyos-$VERSION-$BUILD_ARCH.iso  ] || exit 1
 
