@@ -28,8 +28,10 @@ prepare:
 iso: check_build_config clean prepare
 	@set -e
 	@echo "It's not like I'm building this specially for you or anything!"
-	cd $(build_dir) && lb build 2>&1 | tee build.log
-	@scripts/copy-image 
+	cd $(build_dir)
+	lb build 2>&1 | tee build.log
+	cd ..
+	@scripts/copy-image
 
 .PHONY: prepare-package-env
 .ONESHELL:
